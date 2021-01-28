@@ -1,0 +1,12 @@
+pipelines:
+  - name: test
+    configuration:
+      retentionPolicy:
+          maxAgeDays: 15
+          minRuns: 5
+    steps:
+      - name: testStep
+        type: Bash
+        execution:
+          onStart:
+            - echo "executing onStart"
